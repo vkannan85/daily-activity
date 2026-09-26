@@ -1,0 +1,10 @@
+import express from 'express';
+import path from 'path';
+import { fileURLToPath } from 'url';
+const app=express();
+const __dirname=path.dirname(fileURLToPath(import.meta.url));
+app.use(express.static(path.join(__dirname,'public')));
+app.get('/config.js',(req,res)=>{res.type('application/javascript').send(`window.APP_CONFIG=${JSON.stringify({supabaseUrl:process.env.SUPABASE_URL||'',supabaseKey:process.env.SUPABASE_PUBLISHABLE_KEY||''})}`)});
+app.get('/health',(req,res)=>res.json({ok:true}));
+app.get('*',(req,res)=>res.sendFile(path.join(__dirname,'public','index.html')));
+const port=process.env.PORT||3000; app.listen(port,'0.0.0.0',()=>console.log(`Daily Activity listening on ${port}`));

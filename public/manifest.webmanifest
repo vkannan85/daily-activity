@@ -1,1 +1,1 @@
-{"name":"Daily Activity","short_name":"Activity","start_url":"/","display":"standalone","background_color":"#f5f7f7","theme_color":"#0f766e","description":"Daily activity planner and reminder"}
+{"name":"Daily Activity","short_name":"Activity","start_url":"/","display":"standalone","background_color":"#f5f7f7","theme_color":"#0f766e","description":"Daily activity planner and reminder","icons":[{"src":"/icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]}
